@@ -23,7 +23,7 @@ load_dotenv()
 
 client = InferenceClient(
     provider="hf-inference",
-    api_key=os.environ["HUGGINGFACEHUB_API_TOKEN"],
+    api_key=os.environ["HF_TOKEN"],
 )
 
 result = client.sentence_similarity("That is a happy person",
@@ -34,3 +34,5 @@ result = client.sentence_similarity("That is a happy person",
     ],
     model="sentence-transformers/all-MiniLM-L6-v2",
 )
+
+print(result)
